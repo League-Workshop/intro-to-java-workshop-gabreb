@@ -17,13 +17,14 @@ rob.hide();
 rob.penDown(); 
 rob.setSpeed(1000); 
 		// *14. Use the methods setX and setY to move the ninja star into the center of the screen
-
+rob.setX(425);
+rob.setY(325);
 		// *15. Make some adjustments to see what other kinds of shapes you can make.
 //nah
 		// 12. Set the robot speed to 100
 rob.setSpeed(100);
 		// 13. Use a for loop to repeat all of the code below 25 times
-for (int i = 0; i < 25; i++); 
+for (int i = 0; i < 25; i++) {
 			// 2. Turn the robot 1/8 of a circle
 		rob.turn(360/8);
 			// 3. Move the robot 64 pixels
@@ -47,7 +48,7 @@ for (int i = 0; i < 25; i++);
 			// 10. Check that your shape is the same as Figure 1. This is one arm of the ninja star.
 			//yes
 			// 11. Color your ninja star like Figure 2.
-		
+}
 	}
 
 }
