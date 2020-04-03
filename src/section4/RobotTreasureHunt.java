@@ -16,37 +16,61 @@ import org.jointheleague.graphical.robot.Robot;
 public class RobotTreasureHunt implements KeyEventDispatcher{
 
 	// 1. Create a new mini robot (type "mini" inside the parentheses)
-	
+	Robot rob = new Robot("mini"); 
 	private void goUp() throws InterruptedException {
 		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
-		
+		rob.setAngle(0);
+		rob.microMove(25);
 	}
 
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
-		
+		rob.setAngle(180);
+		rob.microMove(25); 
 	}
 
 	private void turnLeft() throws InterruptedException{
 		// 4. Make the robot turn to the left (use setAngle(angle) and microMove(distance))
-
+rob.setAngle(-90); 
+rob.microMove(25);
 	}
 
 	private void turnRight() throws InterruptedException{
 		// 5. make the robot turn to the right (use setAngle(angle) and microMove(distance))
-		
+		rob.setAngle(90);
+		rob.microMove(25);
 	}
 
 	private void spaceBarWasPressed() {
 
 		// 5. Change ROBOTNAME below to match the name of the robot you created in step 1.  THEN, remove the slashes at the beginning of the next two lines
-		//int robotXLocation = ROBOTNAME.getX();
-		//int robotYLocation = ROBOTNAME.getY();
+		int robotXLocation = rob.getX();
+		int robotYLocation = rob.getY();
 		
 		// 6. Print the robotXLocation and robotYLocation variables to the console 
+		System.out.println(robotXLocation + " " + robotYLocation);
 		
 		// 7. If robot is at same location as the little girl
 		//      --make a pop-up tell the robot where to go next
+		if(robotXLocation==725&&robotYLocation==400) {
+			JOptionPane.showMessageDialog(null, "Go to the middle parrot");	
+		}
+		if(robotXLocation==625&&robotYLocation==150) {
+			JOptionPane.showMessageDialog(null, "Go to the girl's feet");	
+			
+		}
+		if(robotXLocation==725&&robotYLocation==475) {
+			JOptionPane.showMessageDialog(null, "Go to the left parrot");	
+		}
+		if(robotXLocation==600&&robotYLocation==150) {
+		JOptionPane.showMessageDialog(null, "The treasure is in the nose of the skull if you get there. Hahahahah!");
+		rob.hide();
+		}
+		if(robotXLocation==250&&robotYLocation==125) {
+			JOptionPane.showMessageDialog(null, "Uck; you have beat me! The treasure is yours!");
+		}
+		
+
 		
 		// 8. Give the user subsequent clues at different locations on the image
 		// (pirate robot, swamp, parrots, etc.)
@@ -60,7 +84,7 @@ public class RobotTreasureHunt implements KeyEventDispatcher{
 		KeyboardFocusManager.getCurrentKeyboardFocusManager().addKeyEventDispatcher(this);
 		Robot.setWindowImage("section4/treasure_hunt.jpg");
 	
-		JOptionPane.showMessageDialog(null, "Ask the girl for help with your quest. Press the space bar to ask.");
+		JOptionPane.showMessageDialog(null, "Ask the girl for help with your quest. Press the space bar to ask for stuff.");
 
 	}
 
